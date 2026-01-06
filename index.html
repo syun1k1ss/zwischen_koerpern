@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwischen Körpern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER (BLEIBT) ================= -->
+    <header class="site-header">
+        <img src="images/header/logo.png" alt="Logo" class="logo">
+
+        <div class="header-inner">
+
+            <!-- Titel links -->
+            <div class="header-title">
+                <h1>Zwischen Körpern</h1>
+            </div>
+
+            <!-- Infos rechts -->
+            <div class="header-meta">
+                <p>Eine Ausstellung des Leistungsfachs Kunst</p>
+                <p>📍 Obere Pfalzgrafstraße 1, Freising</p>
+                <p>📅 17.–18. Januar 2026 von 14:00–18:00 Uhr</p>
+                <a href="https://instagram.com/zwischen_koerpern" target="_blank" class="instagram-link header-instagram">
+                    📷 @zwischenkoerpern instagram
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= STARTANSICHT (NUR BILDER) ================= -->
+    <section class="intro intro-images">
+        <!-- absichtlich leer: Random-Bilder laufen wie bisher -->
+    </section>
+
+    <!-- ================= TEXTANSICHT (NEU) ================= -->
+    <section class="intro intro-text">
+        <div class="intro-content">
+            <p class="subtitle">
+                Die Ausstellung "Zwischen Körpern" präsentiert die Werke der 13. Jahrgangsstufe 
+                des Camerloher-Gymnasiums Freising aus dem Leistungsfach Kunst.
+            </p>
+
+            <div class="main-text">
+                <p>
+                    "Zwischen Körpern" thematisiert die vielschichtigen Beziehungen zwischen Menschen, 
+                    Körpern und Räumen. Die Werke untersuchen emotionale, soziale und psychologische 
+                    Zwischenräume und zeigen, wie Körper miteinander in Beziehung treten, sich 
+                    beeinflussen oder einander fremd bleiben.
+                </p>
+
+                <p>
+                    Die Arbeiten bewegen sich zwischen Intimität und Inszenierung, zwischen Berührung 
+                    und Abgrenzung. Raum, Licht und Materialität eröffnen vielschichtige Perspektiven 
+                    auf das Dazwischen.
+                </p>
+            </div>
+
+            <div class="concert-box">
+                <h3>🎵 Eröffnungskonzert</h3>
+                <p class="concert-time">Freitag, 17. Januar 2026 · 19:00 Uhr</p>
+                <p class="concert-description">
+                    Back to Business begleitet die Ausstellungseröffnung mit [Genre/Stil]. 
+                    [Kurze Beschreibung der Band - 1-2 Sätze über ihren Sound/Stil]
+                </p>
+                <a href="https://instagram.com/backtobusiness_music" target="_blank" class="instagram-link concert-instagram">
+                    📷 @back to business instagram
+                </a>
+            </div>
+
+            <div class="scroll-hint">
+                ↓ zur Künstler:innen-Sektion
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KÜNSTLERBEREICH ================= -->
+    <div class="artists-wrapper">
+
+        <!-- Künstler 1: Helena Baur -->
+        <section class="fullscreen-section" data-artist="helena_baur">
+            <div class="overlay">
+                <h2>Helena Baur</h2>
+            </div>
+        </section>
+
+        <!-- Künstler 2: Annika -->
+        <section class="fullscreen-section" data-artist="annika">
+            <div class="overlay">
+                <h2>Annika</h2>
+            </div>
+        </section>
+
+        <!-- Künstler 3: Hannah Wagner -->
+        <section class="fullscreen-section" data-artist="hannah_wagner">
+            <div class="overlay">
+                <h2>Hannah Wagner</h2>
+            </div>
+        </section>
+
+        <!-- Künstler 4: Marlene Gölz -->
+        <section class="fullscreen-section" data-artist="marlene_goelz">
+            <div class="overlay">
+                <h2>Marlene Gölz</h2>
+            </div>
+        </section>
+
+        <!-- Künstler 5-12: Platzhalter -->
+        <section class="fullscreen-section" data-artist="artist_5">
+            <div class="overlay">
+                <h2>Künstler:in 5</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_6">
+            <div class="overlay">
+                <h2>Künstler:in 6</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_7">
+            <div class="overlay">
+                <h2>Künstler:in 7</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_8">
+            <div class="overlay">
+                <h2>Künstler:in 8</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_9">
+            <div class="overlay">
+                <h2>Künstler:in 9</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_10">
+            <div class="overlay">
+                <h2>Künstler:in 10</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_11">
+            <div class="overlay">
+                <h2>Künstler:in 11</h2>
+            </div>
+        </section>
+
+        <section class="fullscreen-section" data-artist="artist_12">
+            <div class="overlay">
+                <h2>Künstler:in 12</h2>
+            </div>
+        </section>
+
+        <!-- Dots werden dynamisch von JS generiert -->
+        <div class="dots" id="dots-container"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
