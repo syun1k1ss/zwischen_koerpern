@@ -4,10 +4,40 @@ const artistsWrapper = document.querySelector('.artists-wrapper');
 const sections = document.querySelectorAll('.fullscreen-section');
 const dotsContainer = document.getElementById('dots-container');
 const instagramLinks = document.querySelectorAll('.instagram-link');
+const scrollArrow = document.querySelector('.scroll-arrow');
 
 let currentVertical = 0;   // 0 = intro, 1 = text, 2 = artists
 let currentHorizontal = 0; // artists only
 let isScrolling = false;
+
+/* ================= SCROLL BAR HANDLING ================= */
+
+function updateScrollbarVisibility() {
+    if (currentVertical === 0) {
+        document.body.classList.add('on-intro-images');
+    } else {
+        document.body.classList.remove('on-intro-images');
+    }
+}
+
+function updateDotsVisibility() {
+    if (currentVertical === 2) {
+        dotsContainer.classList.add('visible');
+    } else {
+        dotsContainer.classList.remove('visible');
+    }
+}
+
+updateScrollbarVisibility();
+updateDotsVisibility();
+
+/* ================= SCROLL ARROW CLICK ================= */
+
+if (scrollArrow) {
+    scrollArrow.addEventListener('click', () => {
+        goVertical(1);
+    });
+}
 
 /* ================= INSTAGRAM LINKS ================= */
 
@@ -105,11 +135,15 @@ function goVertical(index) {
         artistsWrapper.scrollIntoView({ behavior: 'smooth' });
         updateDots();
     }
+
+    updateScrollbarVisibility();
+    updateDotsVisibility();
 }
 
 function goHorizontal(index) {
-    if (index < 0) index = 0;
-    if (index >= sections.length) index = sections.length - 1;
+    // Wrap around: if beyond last, go to first; if before first, go to last
+    if (index >= sections.length) index = 0;
+    if (index < 0) index = sections.length - 1;
 
     currentHorizontal = index;
 
@@ -149,14 +183,16 @@ window.addEventListener('keydown', (e) => {
 
     if (e.key === "ArrowDown") {
         e.preventDefault();
-        if (currentVertical < 2) goVertical(currentVertical + 1);
+        goVertical(currentVertical + 1);
         isScrolling = true;
+        setTimeout(() => isScrolling = false, 50);
     }
 
     if (e.key === "ArrowUp") {
         e.preventDefault();
-        if (currentVertical > 0) goVertical(currentVertical - 1);
+        goVertical(currentVertical - 1);
         isScrolling = true;
+        setTimeout(() => isScrolling = false, 50);
     }
 
     if (currentVertical === 2) {
@@ -164,15 +200,15 @@ window.addEventListener('keydown', (e) => {
             e.preventDefault();
             goHorizontal(currentHorizontal + 1);
             isScrolling = true;
+            setTimeout(() => isScrolling = false, 50);
         }
         if (e.key === "ArrowLeft") {
             e.preventDefault();
             goHorizontal(currentHorizontal - 1);
             isScrolling = true;
+            setTimeout(() => isScrolling = false, 50);
         }
     }
-
-    setTimeout(() => isScrolling = false, 800);
 });
 
 /* ================= TOUCH / DRAG ================= */
